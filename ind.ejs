@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Recommender</title>
+    <style>
+        header {
+          background-color: #333;
+          color: #fff;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+        
+        nav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        nav ul li {
+          display: inline-block;
+          margin-right: 10px;
+        }
+        
+        nav ul li a {
+          color: #fff;
+          text-decoration: none;
+          padding: 10px;
+        }
+        
+        nav ul li a:hover {
+          background-color: #555;
+        }
+      
+        body {
+            background-color: #E8ECEF; /* Change this to your desired background color */
+        }
+
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+        }
+
+        h1 {
+          color: #333;
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+
+        p {
+          color: #666;
+          font-size: 16px;
+          margin: 5px 0;
+        }
+
+        .details {
+          background-color: #FDEBD3;
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .details ul {
+          list-style-type: none;
+          padding: 0;
+        }
+
+        .details li {
+          margin-bottom: 10px;
+        }
+
+        .rating {
+          background-color: #FCE4D6;
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .name {
+          background-color: #FFF9C7;
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .maxrank {
+          background-color: #D6DBF7;
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .rank {
+          background-color: #DFF0D8;
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .maxrat {
+          background-color: #FADBD8;
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .unsolved-problems {
+          background-color: #F9E79F;
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .unsolved-problems ul {
+          list-style-type: none;
+          padding: 0;
+        }
+
+        .unsolved-problems li {
+          margin-bottom: 10px;
+        }
+
+        .tags {
+          background-color: #AED6F1;
+          padding: 20px;
+          margin-bottom: 20px;
+        }
+
+        .tags ul {
+          list-style-type: none;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .tags li {
+          background-color: #76D7C4;
+          color: #fff;
+          padding: 5px 10px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+        }
+
+        .recommended-problems {
+          background-color: #D4EFDF;
+          padding: 20px;
+          
+        }
+
+        .recommended-problems ul {
+          list-style-type: none;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .recommended-problems li {
+          background-color: #a576d7;
+          color: #ffffff;
+          padding: 5px 10px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+          <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/wishlist">Wishlist</a></li>
+              <!-- <li><a href="/Recommended_problems">Recommended Problems</a></li> -->
+              <!-- Add more navigation links as needed -->
+            </ul>
+          </nav>
+        </header>
+      
+        <div class="name">
+            <h1>Name</h1>
+            <p><%= name %></p>
+        </div>
+
+        <div class="rating">
+            <h1>Current Rating</h1>
+            <p><%= rating_value %></p>
+        </div>        
+        
+        <div class="maxrat">
+            <h1>Maximum Rating</h1>
+            <p><%= maxrat %></p>
+        </div>
+
+        <div class="rank">
+            <h1>Rank</h1>
+            <p><%= rank %></p>
+        </div>
+
+        <div class="maxrank">
+            <h1>Maximum Rank</h1>
+            <p><%= maxrank %></p>
+        </div>     
+
+        <div class="unsolved-problems">
+            <h1>Unsolved Problems</h1>
+            <ul>
+                <% for (let i = 0; i < listt.length; i++) { %>
+                    <li><%= listt[i] %></li>
+                <% } %>
+            </ul>
+        </div>
+
+        <div class="tags">
+            <h1>Tags to Focus On</h1>
+            <ul>
+                <% for (let i = 0; i < tags.length; i++) { %>
+                    <li><%= tags[i] %></li>
+                <% } %>
+            </ul>
+        </div>
+
+        <div class="recommended-problems">
+            <h1>Recommended Problems</h1>
+            <ul>
+                <% for (let i = 0; i < problems_list.length; i++) { %>
+                    <li><%= problems_list[i] %></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

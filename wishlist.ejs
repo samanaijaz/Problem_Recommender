@@ -1,0 +1,80 @@
+<%- include('partials/header') %>
+
+<!-- <div class="container mt-5">
+    <h1>Enter Problem Detail</h1>
+  
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card">
+          <div class="card-body">
+  
+            <form action="" method="POST">
+              <div class="form-group">
+                <label for="ProblemId">ProblemId</label>
+                <input type="text" class="form-control" name="ProblemId">
+              </div>
+              <div class="form-group">
+                  <label for="Problem Name">Problem Name</label>
+                  <input type="text" class="form-control" name="Problem_name">
+              </div>  
+              <div class="form-group">
+                <label for="Timeline">Timeline</label>
+                <input type="text" class="form-control" name="Timeline">
+              </div>
+              <button type="submit" class="btn btn-dark">Add</button>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+  
+      
+    </div>
+  </div>  
+   -->
+
+   <body>
+     <div id="problem-list">
+       <h1>Problems</h1>
+       <ul id="problem-ul">
+         <li>Problem 1</li>
+         <li>Problem 2</li>
+         <li>Problem 3</li>
+         <!-- Existing problems -->
+       </ul>
+     </div>
+   
+     <div id="add-problem-container">
+       <h2>Add a Problem</h2>
+       <form id="add-problem-form">
+         <input type="text" id="problem-input" placeholder="Enter a problem">
+         <button type="submit">Add</button>
+       </form>
+     </div>
+   
+     <script>
+       // Get references to necessary elements
+       const problemList = document.getElementById('problem-ul');
+       const addProblemForm = document.getElementById('add-problem-form');
+       const problemInput = document.getElementById('problem-input');
+   
+       // Handle form submission
+       addProblemForm.addEventListener('submit', function(event) {
+         event.preventDefault(); // Prevent form submission
+   
+         const problemText = problemInput.value.trim(); // Get the problem text
+         if (problemText !== '') {
+           const newProblem = document.createElement('li'); // Create a new list item
+           newProblem.textContent = problemText; // Set the problem text
+   
+           problemList.appendChild(newProblem); // Add the new problem to the list
+   
+           problemInput.value = ''; // Clear the input field
+         }
+       });
+     </script>
+   </body>
+
+   
+
+<%- include('partials/header') %>
