@@ -1,18 +1,35 @@
-# Codeforces__Problem__Recommender
-Made a webpage using Node.js, express.js, ejs, html , css, mongodb. where first user will make account with his mail id in which he will require to fill his email address , his codeforces handle and set a password , done using mongodb.
+# Practice Recommendation Web App
 
-And when user login he will be recommended some problems that the user should do for practice. basically those problem are suitable for that particular user as they are extracted using users past history. then user will be shown this current rating and rankings. Also the problems that is unsolved by the user will also be shown,    and the Tags on which user should focus.
+This web application, built using Node.js, Express.js, EJS, HTML, CSS, and MongoDB, provides a personalized practice experience for Codeforces users. Here's a breakdown of its features:
 
-Now exploring each one by one
+## Account Creation and Login
 
-First is recommendation i am recommeding problems by finding the wrong submissions (using codeforces API). and in those which are most frequent tags also what is users current rating as it is known a user should do problems within +250 of his current rating. also i taken the average of the last 5 ratings as current rating   then again fetched API of problemset to access the problems and attached those filters. and got the recommended problems.
+- Users can create an account using their email address, Codeforces handle, and password. MongoDB is employed to store user information securely.
 
-Second i am showing unsolved problems by using codeforces API. by going to users submissions http link where i am taking problems with verdict wrong answer. and then deleting the problems with accepted also. 
+## User Dashboard
 
-Third i am also showing the tags user should focus on. i am storing the wrong submissions tags in a dictionary and sorting that dictionary and taking the top 5 tags and giving it to the user.
+Upon logging in, users are presented with a personalized dashboard that includes:
 
-Fourth is the basic details of the user that also i am fetching with the Codeforces API and organising in a good manner and showing him. 
+### 1. Problem Recommendations
 
-Fiveth is used Mongodb where i created a login / sign up system to make my website more real and good. 
+- The system recommends problems based on the user's past history. It analyzes wrong submissions using the Codeforces API, considering the most frequent tags and the user's current rating. The recommendation system ensures that problems are within a suitable difficulty range.
 
-Also at the end i have used a good CSS in this web project to make it user friendly  .
+### 2. Unsolved Problems
+
+- The application retrieves unsolved problems by querying the user's submissions via the Codeforces API. Problems with a "wrong answer" verdict are included, excluding those with an "accepted" status.
+
+### 3. Focus Tags
+
+- The system identifies tags that the user should focus on by storing tags from wrong submissions. The top 5 tags are extracted, providing insights into areas that need improvement.
+
+### 4. User Details
+
+- Basic details about the user, fetched from the Codeforces API, are organized and displayed. This includes the user's current rating, rankings, and other relevant information.
+
+### 5. MongoDB Integration
+
+- MongoDB is utilized to create a secure login/signup system, enhancing the authenticity of the website.
+
+## Stylish User Interface
+
+- The web project features an aesthetically pleasing and user-friendly interface, with CSS applied to enhance the overall user experience.
